@@ -1,0 +1,27 @@
+{%extends 'layout.html'%}
+{%block content%}
+    <section class="post-detail-content-section">
+        <div class="post-page-display">
+            <div>
+                <h1>Categories</h1>
+                <div class="category-side">
+                    {%for tag in categories%}
+                    <a href="{%url 'category-detail' tag.id%}">
+                        <h3 class="category-tag">{{forloop.counter}} {{tag.title}}</h3>
+                    </a>
+                    {%endfor%}
+                </div>
+            </div>
+            <div class="main-post">
+               <img src="{{object.image.url}}" alt="">
+               <h1>{{object.title}}</h1>
+               <p>{{object.content}}</p>
+            </div>
+            <div class="post-side-bar">
+                <h1>Side Bar</h1>
+            </div>
+        </div>
+    </section>
+{%endblock content%}
+
+

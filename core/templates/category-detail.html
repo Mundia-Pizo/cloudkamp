@@ -1,0 +1,26 @@
+{%extends 'layout.html'%}
+{%load static%}
+{%block content%}
+<section class="category-detail">
+    <h1>#{{object.title}}</h1>
+    <div class="latest-posts">
+        {%for post in object.articles%}
+        <div class="post-card">
+            <a href="{% url 'post-detail' post.id%}">
+                <img src="{{post.image.url}}" alt="">
+            </a>
+            <h1>{{post.title}}</h1>
+            <div class="tags-display">
+                {%for tag in post.hash_tags.all%}
+                <a href="{%url 'category-detail' tag.id%}">
+                    <p>#{{tag.title}}</p>
+                </a>
+                {%endfor%}
+            </div>
+        </div>
+        {%empty%}
+           <h2>No articles for this topic yet!!</h2>
+        {%endfor%}
+    </div>
+</section>
+{%endblock content%}

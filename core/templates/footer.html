@@ -1,0 +1,15 @@
+{%load static%}
+<hr>
+<footer>
+    <div class="footer-container">
+        <img class="bio-image" src="{%static 'images/myphoto.jfif'%}" alt="">
+        <div>
+            <h3>My Name is Stacy</h3>
+            <p>Am an Electrical and Telecommunication engineer, with bachelors degree, amd also a software engineer who enjoys
+                making stunning software designs.</p>
+        </div>
+    </div> 
+    <div class="resources">
+        <h3><a href="{%url 'home'%}">Home</a> | <a href="{% url 'courses'%}"> Courses</a> | <a href="{% url 'posts'%}"> Articles</a> </h3>
+    </div>   
+</footer>

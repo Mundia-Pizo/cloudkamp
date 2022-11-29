@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section class="courses">
+    <div class="courses-list" style="margin-top:25px ;">
+        {%for course in object_list%}
+        <a href="{% url 'course-detail' course.id%}">
+            <div class="post-card">
+                <img src="{{course.image.url}}" alt="">
+                <h1>{{course.title}}</h1>
+            </div>
+        </a>
+        {%endfor%}
+    </div>
+</section>
+{%endblock content%}

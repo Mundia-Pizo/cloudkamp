@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section class="category-content">
+    <h1>{{object.title}}</h1>
+    <div class="course-detail-dissplay">
+        <div class="post-card">
+            {%for lesson in object.lessons%}
+                <img src="{{lesson.image.url}}" alt="">
+                <h1>{{lesson.title}}</h1>
+                <p>{{lesson.content}}</p>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+{%endblock content%}

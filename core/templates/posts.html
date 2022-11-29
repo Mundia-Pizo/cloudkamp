@@ -1,0 +1,14 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section class="posts">
+    <h1>Categories</h1>
+    <div class="post-categories">
+    {%for tag in categories%}
+    <a href="{%url 'category-detail' tag.id%}">
+        <h3 class="category-tag"> {{tag.title}}</h3>
+    </a>
+    {%endfor%}
+    </div>
+     {%include 'post-card.html'%}
+</section>
+{%endblock content%}
