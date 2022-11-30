@@ -17,7 +17,13 @@
                 </a>
                 {%endfor%}
             </div>
+            <p>{{post.description}}</p>
+            <a href="{% url 'post-detail' post.id%}">
+                <p class="post-card-button">continue reading</p>
+            </a>
+            
         </div>
+        
         {%empty%}
            <h2>No articles for this topic yet!!</h2>
         {%endfor%}

@@ -15,11 +15,11 @@
             <div class="main-post">
                <img src="{{object.image.url}}" alt="">
                <h1>{{object.title}}</h1>
-               <p>{{object.content}}</p>
+               <p>{{object.content | safe}}</p>
             </div>
-            <div class="post-side-bar">
+            <!-- <div class="post-side-bar">
                 <h1>Side Bar</h1>
-            </div>
+            </div> -->
         </div>
     </section>
 {%endblock content%}

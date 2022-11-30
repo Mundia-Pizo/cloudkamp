@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
+from wysiwyg_img.models import BaseImageModel
 
 
 class HashTag(models.Model):
@@ -17,7 +19,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='article-images')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = HTMLField()
+    description = models.TextField(max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(blank=True, null=True)
     hash_tags = models.ManyToManyField(to=HashTag)
@@ -25,6 +28,10 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class PostImage(BaseImageModel):
+    post = models.ForeignKey(Article, on_delete=models.CASCADE)
 
 
 class Course(models.Model):

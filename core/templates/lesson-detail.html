@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section class="lesson-detail">
+    <div>
+        <h1>{{lesson.title}}</h1>
+        <img style="width:100% ;" src="{{lesson.image.url}}" alt="">
+    </div>
+    <div style="margin-top:30px; padding:20px">
+       <h1>{{lesson.course.title}}</h1>
+       {% for lesson in lesson.course.lessons %}
+          <a href="{% url 'lesson-detail' lesson.id %}"><h4>{{lesson.title}}</h4></a> 
+       {% endfor %}
+    </div>
+</section>
+{%endblock content%}

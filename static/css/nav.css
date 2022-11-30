@@ -4,8 +4,8 @@
     justify-content: space-between;
 }
 
-.nav-links{
-    width: 380px
+.nav-links, .nav-content{
+    width: fit-content
 }
 
 
@@ -15,6 +15,10 @@
 }
 .nav-links, .nav h1{
     margin-top: 10px;
+}
+.nav-link-display h1{
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 
@@ -33,6 +37,7 @@ nav{
     background-color: aquamarine;
     padding-left: 20px;
     padding-right: 20px;
+    width: fit-content;
 
 }
 .sign-in-button h1{
@@ -56,9 +61,10 @@ nav{
     padding: 8px;
     background-color: white;
     height: 20px;
-    margin-top: 28px;
+    margin:28px 0px 0px 0px;
     cursor: pointer;
     display: none;
+    width: fit-content;
 }
 .line{
     height:2px;
@@ -70,19 +76,28 @@ nav{
 .search{
     display: block;
 }
+.search-margin{
+    margin-top: 10px;
+    margin-right: 20px
+}
 @media(max-width:780px){
-    .nav-links {
+    .nav-link-display {
             display: none;
         }
+    .nav-links{
+        float: right;
+        width: fit-content;
+    }
     .burger{
         display: block;
+    }
+    .search-margin{
+        margin-right: 0px;
+        margin-top: 0px;
     }
 
 }
 @media(max-width:880px){
-    .nav-links {
-            min-width: 320px
-        }
     .logo{
         font-size: 24px;
     }
