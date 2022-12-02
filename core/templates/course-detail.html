@@ -3,15 +3,15 @@
 <section class="category-content">
     <h1>{{object.title}}</h1>
     <div class="courses-list">
-        <div class="post-card">
-            {%for lesson in object.lessons%}
-            <a href="{%url 'lesson-detail' lesson.id %}">
-                <img src="{{lesson.image.url}}" alt="">
-                <h1>{{lesson.title}}</h1>
-                <p>{{lesson.content}}</p>
-            </a>
-            {%endfor%}
-        </div>
+        {%for lesson in object.lessons %}
+            <div class="post-card">
+                <a href="{%url 'lesson-detail' lesson.id %}">
+                    <img src="{{lesson.image.url}}" alt="">
+                    <h1>{{lesson.title}}</h1>
+                    <p>{{lesson.content}}</p>
+                </a>
+            </div>
+        {%endfor%}
     </div>
 </section>
 {%endblock content%}

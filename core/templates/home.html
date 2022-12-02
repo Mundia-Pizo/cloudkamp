@@ -5,16 +5,51 @@
      <div class="hero-section">
         <div>
             <h1>Cloudkamp.io</h1>
-            <p>Software development is a skill that needs pratice, cloudkamp is designed to make software development roadmap as easy, practical and enjoyable as posible. </p>
+            <p>Software development is a skill that needs pratice, cloudkamp is designed to make software development roadmap as easy, practical and enjoyable as possible. </p>
         </div>
         <div>
             <img class="hero-image" src="{% static 'images/hero1.png' %}" alt="">
         </div>
      </div>
 </section>
-
+<section class="main-resources">
+    <div>
+        <h1>Resources</h1>
+        <h3 style="margin:0px ;margin-bottom:10px">What you will find on this site</h3>
+    </div>
+    <div class="resource-grid">
+        <div>
+            <h1><i class="fa-solid fa-graduation-cap"> </i>Courses</h1>
+            <p>The courses are designed in a way to make them more interactive and easy to undertand. Each course has short videos and shot concise notes to explain the key concept,  and also full project that carters all the concepts learnt.</p>
+         </div>
+        <div>
+            <h1><i class="fa-solid fa-book"></i> Blog</h1>
+            <p>The blog consists of short vidoes and short notes for any specific topic, they are designed for both proffessional and beginner developers. The articles cover deep concepts for s specific topic coupled with extensive research and resources.</p>
+        </div>
+        <div>
+            <h1><i class="fa-solid fa-bolt"></i> Quizes</h1>
+            <p>Each course has a quiz section that makes the learning process even more fun, the question cover all the concepts learnt during the course of each course. You will be asked base on the level of  your learning, therefore pay close attention to every lesson.</p>
+        </div>
+    </div>
+</section>
 <section class="posts">
-    <h1>Latest Posts</h1>
+    <h1 class="lastest-post-header">Latest Posts</h1>
     {%include 'post-card.html'%}
+</section>
+
+<section class="courses course-showcase">
+    <h1>Level up your skills</h1>
+    <h4>Get your skills to another level by taking one of the courses</h4>
+    <h1>Latest courses</h1>
+    <div class="courses-list" style="margin-top:25px ;">
+        {%for course in latest_courses%}
+        <a href="{% url 'course-detail' course.id%}">
+            <div class="post-card">
+                <img src="{{course.image.url}}" alt="">
+                <h1>{{course.title}}</h1>
+            </div>
+        </a>
+        {%endfor%}
+    </div>
 </section>
 {%endblock content%}

@@ -13,7 +13,11 @@
                 <h1><a href="{% url 'courses' %}"><i class="fa-solid fa-graduation-cap"></i> Courses  </a> </h1>
                 <!-- include the book icon -->
                 <h1><a href="{%url 'posts'%}"><i class="fa-solid fa-book"></i> Blog</a> </h1>
-                <h1 class="sign-in-button"><a href=".">Sign in</a> </h1>
+                {%if user.is_authenticated%}
+                  <h1 class="sign-in-button"><a href="{% url 'account_logout'%}">logout</a> </h1>
+                {%else%}
+                   <h1 class="sign-in-button"><a href="{% url 'account_login'%}">Sign in</a> </h1>
+                {%endif%}
                 
             </div>
         </div>

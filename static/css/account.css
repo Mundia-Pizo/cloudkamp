@@ -1,0 +1,11 @@
+.auth-main{
+    width: 40%;
+    margin: auto;
+    background-color: white;
+}
+
+
+form input{
+    width: 100%;
+    padding: 8px;
+}

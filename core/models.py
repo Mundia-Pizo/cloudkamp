@@ -11,6 +11,10 @@ class HashTag(models.Model):
     def articles(self):
         return self.article_set.all()
 
+    @property
+    def related_articles(self):
+        return self.article_set.all()[0:4]
+
     def __str__(self):
         return self.title
 
@@ -56,3 +60,12 @@ class Lesson(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class QuizQuestions(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+    course = models.ManyToManyField(Course)
+
+    def __str__(self) -> str:
+        return f'Quiz questions for {self.course.title}'

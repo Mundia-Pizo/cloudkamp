@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import HashTag, Article, Course, Lesson, PostImage
+from .models import HashTag, Article, Course, Lesson, PostImage, QuizQuestions
 
 
 from django.contrib import admin
-
 from wysiwyg_img.admin import ImageInline
 
 
@@ -15,6 +14,16 @@ class ArticleAdmin(admin.ModelAdmin):
     inlines = [
         PostImageInline,
     ]
+
+
+# class QuizQuestionInline(admin.StackedInline):
+#     model = QuizQuestions
+
+
+# class CourseAdmin(admin.):
+#     inlines = [
+#         QuizQuestionInline
+#     ]
 
 
 admin.site.register(Article, ArticleAdmin)

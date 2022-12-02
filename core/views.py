@@ -11,8 +11,10 @@ from django.conf import settings
 class HomePage(View):
     def get(self, request, *args, **kwargs):
         articles = Article.objects.order_by('-date_created')[0:3]
+        latest_courses = Course.objects.all()[:2]
         context = {
-            'posts': articles
+            'posts': articles,
+            'latest_courses': latest_courses
         }
         return render(request, 'home.html', context)
 
